@@ -1,0 +1,21 @@
+{
+  "afip": {
+    "bill_type": "cbte_Type=6",
+    "sale_point": "sale_Point=3",
+    "api_public": "9fuj901dsn239hfg24jg2804gj9134f9'3gj8935jg89104u3hf9k'1d8305yuhdh732y1d893en1803j81fg3",
+    "url": "afip.apeirongs.com",
+    "token": "9fuj901dsn239hfg24jg2804gj9134f9'3gj8935jg89104u3hf9k'1d8305yuhdh732y1d893en1803j81fg3",
+    "app": "Flowy",
+    "api_version": "/api/v1"
+  },
+  "base": {
+    "url": "https://afip-api-test-qz3ihxyiga-ue.a.run.app"
+  },
+  "mercadopago": {
+    "key": "THE API KEY",
+    "id": "THE CLIENT ID"
+  },
+  "mp": {
+    "token": "APP_USR-1887482204388765-102914-5031c8b7ab28de1bc527139665223882-673738357"
+  }
+}
