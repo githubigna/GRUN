@@ -1,7 +1,7 @@
 import { updateParams , userUpdateParams} from "../interfaces/userUpdateParams";
 import { iwebHookRepository } from "../interfaces/webHookInterface";
 import { webhookTypeEnum } from "../types/hooksEnum";
-export class user {
+export class userGifty {
     _id: string;
     state: boolean;
     status: string;

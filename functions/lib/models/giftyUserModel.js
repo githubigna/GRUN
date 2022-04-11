@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.user = void 0;
+exports.userGifty = void 0;
 const hooksEnum_1 = require("../types/hooksEnum");
-class user {
+class userGifty {
     constructor(_id, state, status, orderHook, categoryHook, visualizationsQuantity, storeId, accessToken, business_id, email, onboardingComplete, debt) {
         this._id = _id;
         this.state = state;
@@ -86,5 +86,5 @@ class user {
         }
     }
 }
-exports.user = user;
+exports.userGifty = userGifty;
 //# sourceMappingURL=giftyUserModel.js.map

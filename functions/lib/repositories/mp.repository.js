@@ -17,6 +17,7 @@ class mpRepository {
                 "storeId": preapprovalData.body.external_reference,
                 "status": preapprovalData.body.status
             };
+            console.log('Preapproval data', preapprovalData);
             return updateParams;
         }
         catch (error) {

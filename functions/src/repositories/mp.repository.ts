@@ -26,6 +26,7 @@ export class mpRepository implements impRepository {
                 "storeId": preapprovalData.body.external_reference,
                 "status": preapprovalData.body.status
             }
+            console.log('Preapproval data', preapprovalData);
             return updateParams
         } catch (error) {
             throw new Error("Error en getSubscription (mpRepository.get :: linea 17 :: src/repositories/mp.repository.ts ::)")
