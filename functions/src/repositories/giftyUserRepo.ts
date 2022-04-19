@@ -18,7 +18,9 @@ export class userRepository implements iuserRepository {
 
     async update(user: user): Promise<void> { //*------------->Función que persiste en la BBDD cualquier cambio ejercido sobre el usuario de dominio que es pasado como parámetro
         try {
+            console.log('entro');
             const userObject : userUpdateParams = user.toObject();
+            console.log('user',user);
             await userSchema.findByIdAndUpdate(user._id,{
                 $set:{
                     "subscriptionData.status":`${userObject.status}`,

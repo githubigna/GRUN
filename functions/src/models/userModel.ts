@@ -52,15 +52,23 @@ export class user {
     async update(updateParams: updateParams): Promise<void> { //*-------------> Funcion de actualización en caso que el webhook sea de suscripción
         try {
             if (updateParams.status !== this.status) { //!------------------<<->>-<<!>>-< Checkea si hubo realmente un cambio en el estatus de la suscripción ---->
-                if (updateParams.status === "cancelled") {
+                if (updateParams.status === 'cancelled') {
+                    console.log('THIS',this);
+
                     this.state = false;
+
                     this.status = updateParams.status || this.status;
+
                     await this._repository?.delete(this.orderHook, this.storeId, this.accessToken);
+
                     await this._repository?.delete(this.categoryHook, this.storeId, this.accessToken);
+                    
                     this.orderHook = "";
+
                     this.categoryHook = "";
+
                 }
-                else if (updateParams.status === "authorized") {
+                else if (updateParams.status === 'authorized') {
                     this.onboardingComplete = true;
                     this.state = true;
                     this.status = updateParams.status || this.status;

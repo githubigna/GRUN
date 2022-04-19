@@ -40,7 +40,8 @@ class user {
         var _a, _b, _c, _d;
         try {
             if (updateParams.status !== this.status) { //!------------------<<->>-<<!>>-< Checkea si hubo realmente un cambio en el estatus de la suscripción ---->
-                if (updateParams.status === "cancelled") {
+                if (updateParams.status === 'cancelled') {
+                    console.log('THIS', this);
                     this.state = false;
                     this.status = updateParams.status || this.status;
                     await ((_a = this._repository) === null || _a === void 0 ? void 0 : _a.delete(this.orderHook, this.storeId, this.accessToken));
@@ -48,7 +49,7 @@ class user {
                     this.orderHook = "";
                     this.categoryHook = "";
                 }
-                else if (updateParams.status === "authorized") {
+                else if (updateParams.status === 'authorized') {
                     this.onboardingComplete = true;
                     this.state = true;
                     this.status = updateParams.status || this.status;

@@ -54,18 +54,34 @@ export class userGifty {
             if (updateParams.status !== this.status) { //!------------------<<->>-<<!>>-< Checkea si hubo realmente un cambio en el estatus de la suscripción ---->
                 if (updateParams.status === "cancelled") {
                     this.state = false;
+
                     this.status = updateParams.status || this.status;
+
+                    console.log("This order hook & this storeID & this accessToken for webhookRepository delete method ::");
+                    
+                    console.log(this.orderHook, this.storeId, this.accessToken);
+                    
                     await this._repository?.delete(this.orderHook, this.storeId, this.accessToken);
+
                     await this._repository?.delete(this.categoryHook, this.storeId, this.accessToken);
+
                     this.orderHook = "";
+
                     this.categoryHook = "";
+                    
                 }
                 else if (updateParams.status === "authorized") {
+
                     this.onboardingComplete = true;
+
                     this.state = true;
+
                     this.status = updateParams.status || this.status;
+
                     this.orderHook = await this._repository?.add(webhookTypeEnum.order, this.storeId, this.accessToken) || null;
+
                     this.categoryHook = await this._repository?.add(webhookTypeEnum.category, this.storeId, this.accessToken) || null;
+
                 }
             }
         } catch (e) {

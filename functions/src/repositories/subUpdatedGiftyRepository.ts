@@ -25,6 +25,7 @@ export class subscriptionUpdate {
         user.repository = this.webhookRepository;//!------------->-------------> testeado
 
         //* Ward
+        console.log('diff',mpData.status ===    user.status);
         if(mpData.status == user.status) return;
 
         //!------------->------------->------------->------------->-------------> Actualiza el usuario poniendo/quitando webhooks y datos

@@ -8,13 +8,14 @@ class webhookrepository {
         if (id === null)
             return;
         try {
-            await axios_1.default.delete(`https://api.tiendanube.com/v1/${storeId}/webhooks/${id}`, {
+            let answer = await axios_1.default.delete(`https://api.tiendanube.com/v1/${storeId}/webhooks/${id}`, {
                 headers: {
                     "Content-Type": "application/json",
                     Authentication: `bearer ${accessToken}`,
                     "User-Agent": "Flowy - Cross-sell & Up-sell (appflowy@gmail.com)",
                 },
             });
+            console.log('answer', answer.status);
         }
         catch (error) {
             throw new Error("Error en delete webhook (webHookRepository.delete :: linea 7 :: src/repositories/webHookRepository.ts ::)");

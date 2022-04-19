@@ -20,7 +20,9 @@ class userRepository {
     ;
     async update(user) {
         try {
+            console.log('entro');
             const userObject = user.toObject();
+            console.log('user', user);
             await userSchema_1.userSchema.findByIdAndUpdate(user._id, {
                 $set: {
                     "subscriptionData.status": `${userObject.status}`,

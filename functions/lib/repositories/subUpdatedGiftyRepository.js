@@ -15,6 +15,7 @@ class subscriptionUpdate {
         //*------------->------------->------------->------------->-------------> Asigna por un set el webhook repository al user
         user.repository = this.webhookRepository; //!------------->-------------> testeado
         //* Ward
+        console.log('diff', mpData.status === user.status);
         if (mpData.status == user.status)
             return;
         //!------------->------------->------------->------------->-------------> Actualiza el usuario poniendo/quitando webhooks y datos

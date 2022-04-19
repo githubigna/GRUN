@@ -43,6 +43,8 @@ class userGifty {
                 if (updateParams.status === "cancelled") {
                     this.state = false;
                     this.status = updateParams.status || this.status;
+                    console.log("This order hook & this storeID & this accessToken for webhookRepository delete method ::");
+                    console.log(this.orderHook, this.storeId, this.accessToken);
                     await ((_a = this._repository) === null || _a === void 0 ? void 0 : _a.delete(this.orderHook, this.storeId, this.accessToken));
                     await ((_b = this._repository) === null || _b === void 0 ? void 0 : _b.delete(this.categoryHook, this.storeId, this.accessToken));
                     this.orderHook = "";

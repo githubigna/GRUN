@@ -21,7 +21,7 @@ export class mpRepository implements impRepository {
     async get(): Promise<mpUpdateParams> {//*------------->Función que pide la suscripción con los datos del webhook
         try {
             let preapprovalData = await this.mp.preapproval.findById(this._id)
-
+            
             let updateParams = {
                 "storeId": preapprovalData.body.external_reference,
                 "status": preapprovalData.body.status
